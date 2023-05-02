@@ -15,7 +15,7 @@ export const Container = styled.div`
     height: 56px;
     width: 100%;
 
-    padding: 12px;
+    padding: 20px 24px;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
     background: transparent;
@@ -27,6 +27,6 @@ export const Container = styled.div`
   }
 
   > svg {
-      margin-left: 16px;
-    }
+    margin-left: 16px;
+  }
 `;
