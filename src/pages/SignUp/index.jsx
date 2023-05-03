@@ -15,23 +15,26 @@ export function SignUp() {
 
           <h2>Crie sua conta</h2>
 
-          <Input 
-            placeholder="Nome"
-            type="text"
-            icon={FiUser}
-          />
+          <div>
+            <Input 
+              placeholder="Nome"
+              type="text"
+              icon={FiUser}
+            />
 
-          <Input 
-            placeholder="E-mail"
-            type="text"
-            icon={FiMail}
-          />
+            <Input 
+              placeholder="E-mail"
+              type="text"
+              icon={FiMail}
+            />
 
-          <Input 
-            placeholder="Senha"
-            type="password"
-            icon={FiLock}
-          />
+            <Input 
+              placeholder="Senha"
+              type="password"
+              icon={FiLock}
+            />
+          </div>
+          
 
           <Button title="Cadastrar"/>
 

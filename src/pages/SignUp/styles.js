@@ -16,6 +16,15 @@ export const Form = styled.form`
   justify-content: center;
   align-items: flex-start;
 
+  div {
+    width: 100%;
+  }
+
+  div:nth-child(1),
+  div:nth-child(2) {
+    margin-bottom: 8px;
+  }
+
   > h1 {
     font-size: 48px;
     color: ${({ theme }) => theme.COLORS.PINK};
