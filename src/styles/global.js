@@ -20,6 +20,12 @@ export default createGlobalStyle`
     outline: none;
   }
 
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    outline: none;
+  }
+
   a {
     text-decoration: none;
   }

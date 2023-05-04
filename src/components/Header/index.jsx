@@ -7,21 +7,21 @@ import { Container, Content, Profile } from "./styles";
 export function Header() {
   return (
     <Container>
-        <h1> RocketMovies</h1>
+        <h1>RocketMovies</h1>
         <Input placeholder="Pesquisar pelo título" />
         
       <Content>
         <div>
-          <Link to="#aa">
+          <Link to="/profile">
             <strong>shuharib0t</strong>
           </Link>
 
-          <Link to="#aaa">
+          <Link to="#">
             sair
           </Link>
         </div>
 
-        <Profile to="#aa">
+        <Profile to="/profile">
           <img src="https://github.com/shuharib0t.png" alt="foto do usuário" />
         </Profile>
       </Content>
