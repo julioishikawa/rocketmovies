@@ -57,6 +57,12 @@ export const Form = styled.form`
     }
   }
 
+  h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.GRAY_500};
+  }
+
   .tags {
     display: flex;
     align-items: center;

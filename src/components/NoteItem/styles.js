@@ -14,7 +14,6 @@ export const Container = styled.div`
 
   padding-right: 16px;
 
-
   > button {
     display: flex;
     align-items:center;
@@ -25,8 +24,8 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.PINK};
   }
 
-  > input {
-    width: 100%;
+  > div,
+    input {
     height: 56px;
 
     padding: 16px;

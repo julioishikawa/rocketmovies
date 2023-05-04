@@ -39,7 +39,6 @@ export function NewMovie() {
             <div className="tags">
               <NoteItem value="React" />
               <NoteItem isNew placeholder="Novo marcador" />
-              <NoteItem isNew placeholder="Novo marcador" />
             </div>
           </div>
           
