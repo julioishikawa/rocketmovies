@@ -1,26 +1,24 @@
-import { Container } from './styles';
-import { Tag } from '../Tag';
-import { Rating } from "../Rating";
+import { Container } from './styles'
+import { Tag } from '../Tag'
+import { Rating } from '../Rating'
 
-export function Note({ data, title, rating, description, ...rest }) {
-
+export function Note({ data, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
 
-      <Rating grade={4} isBigSize={false} />
-      
+      <Rating grade={data.rating} isBigSize={false} />
+
       <p>{data.description}</p>
-      
-      {
-        data.tags && 
+
+      {data.tags && (
         <footer>
-          {
-            data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
-          }
+          {data.tags.map((tag) => {
+            const updatedTag = JSON.parse(tag.name)
+            return <Tag key={updatedTag.id} title={updatedTag.value} />
+          })}
         </footer>
-      }
+      )}
     </Container>
-    
-  );
+  )
 }

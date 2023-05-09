@@ -55,6 +55,13 @@ export const Content = styled.div`
   }
 `;
 
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+  flex-grow: 1;
+`;
+
 export const Profile = styled(Link)`
   display: flex;
   align-items: center;
@@ -64,5 +71,23 @@ export const Profile = styled(Link)`
     height: 56px;
     border-radius: 50%;
   }
+`;
+
+export const Logout = styled.button`
+  border: none;
+  background: none;
+  
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+  font-size: 14px;
+  line-height: 18px;
+
+  position: absolute;
+  bottom: 38px;
+  right: 196px;
+
+  a {
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
+    }
 `;
 

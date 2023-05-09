@@ -5,15 +5,8 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-
-  grid-template-areas: 
-  "header"
-  "wrapper"
-  "content"
-  ;
+  display: flex;
+  flex-direction: column;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 `;
