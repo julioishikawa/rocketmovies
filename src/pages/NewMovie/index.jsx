@@ -42,7 +42,7 @@ export function NewMovie() {
       )
     }
 
-    const updatedTags = tags.map((tag) => JSON.stringify(tag))  
+    const updatedTags = tags.map((tag) => JSON.stringify(tag))
 
     await api.post('/notes', {
       title,
