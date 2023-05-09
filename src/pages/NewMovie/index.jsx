@@ -42,11 +42,15 @@ export function NewMovie() {
       )
     }
 
+    const updatedTags = tags.map((tag) => JSON.stringify(tag))
+
+    console.log(updatedTags)
+
     await api.post('/notes', {
       title,
       description,
       rating,
-      tags,
+      tags: updatedTags,
     })
 
     alert('Filme adicionado com sucesso!')

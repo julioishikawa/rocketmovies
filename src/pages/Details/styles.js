@@ -35,14 +35,14 @@ export const Content = styled.div`
   .buttons {
     display: flex;
     justify-content: space-between;
+  }
 
-    a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-      color: ${({ theme }) => theme.COLORS.PINK};
-    }
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 
   div {
