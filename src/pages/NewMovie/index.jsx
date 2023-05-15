@@ -1,87 +1,87 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { FiArrowLeft } from 'react-icons/fi'
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 
-import { api } from '../../services/api'
+import { api } from '../../services/api';
 
-import { Header } from '../../components/Header'
-import { Input } from '../../components/Input'
-import { Textarea } from '../../components/Textarea'
-import { NoteItem } from '../../components/NoteItem'
-import { Button } from '../../components/Button'
+import { Header } from '../../components/Header';
+import { Input } from '../../components/Input';
+import { Textarea } from '../../components/Textarea';
+import { NoteItem } from '../../components/NoteItem';
+import { Button } from '../../components/Button';
 
-import { Container, Form } from './styles'
+import { Container, Form } from './styles';
 
 export function NewMovie() {
-  const [title, setTitle] = useState('')
-  const [rating, setRating] = useState('')
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState('');
+  const [rating, setRating] = useState('');
+  const [description, setDescription] = useState('');
 
-  const [tag, setTag] = useState('')
-  const [tags, setTags] = useState([])
-  const [newTag, setNewTag] = useState({ id: '', value: '' })
+  const [tag, setTag] = useState('');
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState({ id: '', value: '' });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function handleNewMovie() {
     if (!title) {
-      return alert('Digite o título do filme')
+      return alert('Digite o título do filme');
     }
 
     if (!rating) {
-      return alert('Digite a nota do filme')
+      return alert('Digite a nota do filme');
     }
 
     if (!isRatingValid) {
-      return alert('A nota do filme deve ser entre 0 e 5')
+      return alert('A nota do filme deve ser entre 0 e 5');
     }
 
     if (tag) {
       return alert(
         'Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.'
-      )
+      );
     }
 
-    const updatedTags = tags.map((tag) => JSON.stringify(tag))
+    const updatedTags = tags.map((tag) => JSON.stringify(tag));
 
     await api.post('/notes', {
       title,
       description,
       rating,
       tags: updatedTags,
-    })
+    });
 
-    alert('Filme adicionado com sucesso!')
-    navigate(-1)
+    alert('Filme adicionado com sucesso!');
+    navigate(-1);
   }
 
   function handleDiscardMovie() {
     const userConfirmation = confirm(
       'Todas as alterações serão perdidas... Tem certeza que deseja descartar as alterações?'
-    )
+    );
 
     if (userConfirmation) {
-      navigate(-1)
+      navigate(-1);
     }
   }
 
-  const isRatingValid = rating >= 0 && rating <= 5
+  const isRatingValid = rating >= 0 && rating <= 5;
 
   function handleAddTag() {
     if (!tag) {
-      return alert('Você precisa colocar um valor na tag')
+      return alert('Você precisa colocar um gênero válido.');
     }
 
     setTags((prevTags) => [
       ...prevTags,
       { id: crypto.randomUUID(), value: tag },
-    ])
-    setNewTag({ id: '', value: '' })
-    setTag('')
+    ]);
+    setNewTag({ id: '', value: '' });
+    setTag('');
   }
 
   function handleRemoveTag(tag) {
-    setTags((prevState) => prevState.filter((item) => item.id !== tag.id))
+    setTags((prevState) => prevState.filter((item) => item.id !== tag.id));
   }
 
   return (
@@ -122,7 +122,7 @@ export function NewMovie() {
           />
 
           <div>
-            <h2>Marcadores</h2>
+            <h2>Gêneros</h2>
 
             <div className="tags">
               {tags.map((tag, index) => (
@@ -150,5 +150,5 @@ export function NewMovie() {
         </Form>
       </main>
     </Container>
-  )
+  );
 }

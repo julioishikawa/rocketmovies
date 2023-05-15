@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
@@ -27,7 +27,7 @@ export const Container = styled.div`
       border-radius: 8px;
     }
   }
-`
+`;
 
 export const Content = styled.div`
   margin: 0 auto;
@@ -73,7 +73,7 @@ export const Content = styled.div`
     font-family: 'Roboto Slab';
     line-height: 21px;
   }
-`
+`;
 
 export const UserInfo = styled(Link)`
   img {
@@ -85,4 +85,4 @@ export const UserInfo = styled(Link)`
   span {
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
-`
+`;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -7,8 +7,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 116px auto;
   grid-template-areas:
-  "header"
-  "content";
+    'header'
+    'content';
 
   > main {
     grid-area: content;
@@ -88,9 +88,8 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.COLORS.PINK};
       transition: all 0.3s;
 
-
       :nth-child(1):hover {
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};;
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
       }
     }
   }
