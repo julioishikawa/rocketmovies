@@ -1,33 +1,33 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FiPlus } from 'react-icons/fi';
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { FiPlus } from 'react-icons/fi'
 
-import { api } from '../../services/api';
+import { api } from '../../services/api'
 
-import { Header } from '../../components/Header';
-import { Note } from '../../components/Note';
-import { Input } from '../../components/Input';
+import { Header } from '../../components/Header'
+import { Note } from '../../components/Note'
+import { Input } from '../../components/Input'
 
-import { Container, Content, Wrapper, NewMovie } from './styles';
+import { Container, Content, Wrapper, NewMovie } from './styles'
 
 export function Home() {
-  const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState('');
+  const [movies, setMovies] = useState([])
+  const [search, setSearch] = useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function handleDetails(id) {
-    navigate(`/details/${id}`);
+    navigate(`/details/${id}`)
   }
 
   useEffect(() => {
     async function fetchMovies() {
-      const response = await api.get(`/notes?title=${search}`);
-      setMovies(response.data);
+      const response = await api.get(`/notes?title=${search}`)
+      setMovies(response.data)
     }
 
-    fetchMovies();
-  }, [search]);
+    fetchMovies()
+  }, [search])
 
   return (
     <Container>
@@ -57,5 +57,5 @@ export function Home() {
         ))}
       </Content>
     </Container>
-  );
+  )
 }

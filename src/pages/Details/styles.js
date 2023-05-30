@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -8,8 +8,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 116px auto;
   grid-template-areas:
-    'header'
-    'content';
+    "header"
+    "content";
 
   > main {
     grid-area: content;
@@ -37,12 +37,16 @@ export const Content = styled.div`
     justify-content: space-between;
   }
 
+  button,
   a {
     display: flex;
     align-items: center;
     gap: 8px;
 
     color: ${({ theme }) => theme.COLORS.PINK};
+
+    background: none;
+    border: none;
   }
 
   div {
@@ -70,7 +74,7 @@ export const Content = styled.div`
   }
 
   p {
-    font-family: 'Roboto Slab';
+    font-family: "Roboto Slab";
     line-height: 21px;
   }
 `;

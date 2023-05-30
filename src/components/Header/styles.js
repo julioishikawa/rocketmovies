@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.header`
@@ -22,7 +22,7 @@ export const Container = styled.header`
     font-size: 24px;
     color: ${({ theme }) => theme.COLORS.PINK};
   }
-  
+
   input {
     font-size: 14px;
   }
@@ -42,12 +42,12 @@ export const Content = styled.div`
 
   a {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
-    }
-    
+  }
+
   span {
     font-size: 14px;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
+  }
 
   strong {
     font-size: 18px;
@@ -76,7 +76,7 @@ export const Profile = styled(Link)`
 export const Logout = styled.button`
   border: none;
   background: none;
-  
+
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
   font-size: 14px;
@@ -88,6 +88,5 @@ export const Logout = styled.button`
 
   a {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
-    }
+  }
 `;
-

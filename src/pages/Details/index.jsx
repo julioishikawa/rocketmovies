@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FiArrowLeft, FiClock } from 'react-icons/fi';
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { FiArrowLeft, FiClock } from "react-icons/fi";
 
-import { api } from '../../services/api';
-import { useAuth } from '../../hooks/auth';
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
-import moment from 'moment-timezone';
+import moment from "moment-timezone";
 
-import avatarPlaceholder from '../../assets/Missing_avatar.svg';
+import avatarPlaceholder from "../../assets/Missing_avatar.svg";
 
-import { Header } from '../../components/Header';
-import { Rating } from '../../components/Rating';
-import { Tag } from '../../components/Tag';
+import { Header } from "../../components/Header";
+import { Rating } from "../../components/Rating";
+import { Tag } from "../../components/Tag";
 
-import { Container, Content, UserInfo } from './styles';
+import { Container, Content, UserInfo } from "./styles";
 
 export function Details() {
   const [data, setData] = useState({});
@@ -22,19 +22,23 @@ export function Details() {
 
   const { user } = useAuth();
 
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
+
   const avatarURL = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceholder;
 
   const formattedDate = moment
     .utc(data.updated_at)
-    .tz('America/Sao_Paulo')
-    .format('DD/MM/YYYY HH:mm:ss');
-
-  const navigate = useNavigate();
+    .tz("America/Sao_Paulo")
+    .format("DD/MM/YYYY HH:mm:ss");
 
   async function handleRemove() {
-    const confirm = window.confirm('Deseja remover o filme?');
+    const confirm = window.confirm("Deseja remover o filme?");
 
     if (confirm) {
       await api.delete(`/notes/${params.id}`);
@@ -46,7 +50,6 @@ export function Details() {
     async function fetchMovie() {
       const response = await api.get(`/notes/${params.id}`);
       setData(response.data);
-      console.log(response.data);
     }
 
     fetchMovie();
@@ -60,10 +63,10 @@ export function Details() {
         <main>
           <Content>
             <div className="buttons">
-              <Link to="/">
+              <button type="button" onClick={handleBack}>
                 <FiArrowLeft />
                 Voltar
-              </Link>
+              </button>
 
               <Link onClick={handleRemove}> Excluir nota</Link>
             </div>
