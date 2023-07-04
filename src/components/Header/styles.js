@@ -28,6 +28,13 @@ export const Container = styled.header`
   }
 `;
 
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+  flex-grow: 1;
+`;
+
 export const Content = styled.div`
   display: flex;
   align-items: center;
@@ -40,26 +47,19 @@ export const Content = styled.div`
     line-height: 24px;
   }
 
-  a {
-    color: ${({ theme }) => theme.COLORS.GRAY_300};
-  }
+    a {
+      color: ${({ theme }) => theme.COLORS.GRAY_300};
+    }
 
-  span {
-    font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
-  }
+    span {
+      font-size: 14px;
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
 
-  strong {
-    font-size: 18px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
-  }
-`;
-
-export const Search = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0 64px;
-  flex-grow: 1;
+    strong {
+      font-size: 18px;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
 `;
 
 export const Profile = styled(Link)`

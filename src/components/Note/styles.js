@@ -23,7 +23,7 @@ export const Container = styled.button`
 
   > p {
     margin: 15px 0 30px 0;
-    
+
     max-height: 53px;
 
     text-align: left;
@@ -32,11 +32,10 @@ export const Container = styled.button`
 
     overflow: hidden;
     text-overflow: ellipsis;
-    
+
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-
 
     color: ${({ theme }) => theme.COLORS.GRAY_500};
   }
