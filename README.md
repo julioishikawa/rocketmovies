@@ -30,10 +30,10 @@ O RocketMovies é um projeto feito como desafio no programa de formação da emp
 # Utilização 💡
 
 ```
-$ git clone https://github.com/shuharib0t/rocketmovies
+$ git clone https://github.com/julioishikawa/rocketmovies
 $ cd rocketmovies
 $ npm install
 $ npm run dev
 ```
 
-Feito por [shuharib0t](https://www.linkedin.com/in/julio-ishikawa-449417213/) 👋.
+Feito por [shuharib0t](https://www.linkedin.com/in/julio-ishikawa) 👋.
